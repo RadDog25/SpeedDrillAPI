@@ -27,7 +27,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'https://nameless-savannah-12270.herokuapp.com',
-    'nameless-savannah-12270.herokuapp.com'
+    'nameless-savannah-12270.herokuapp.com',
+    'https://raddog25.github.io/SpeedDrill/',
+    'raddog25.github.io/SpeedDrill/'
 ]
 
 
