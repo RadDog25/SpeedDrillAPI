@@ -36,14 +36,30 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'scores',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'scores',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'https://nameless-savannah-12270.herokuapp.com',
+    'nameless-savannah-12270.herokuapp.com',
+    'https://raddog25.github.io',
+    'raddog25.github.io'
+)
+
+CSRF_TRUSTED_ORIGINS = (
+    'https://nameless-savannah-12270.herokuapp.com',
+    'nameless-savannah-12270.herokuapp.com',
+    'https://raddog25.github.io',
+    'raddog25.github.io'
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
