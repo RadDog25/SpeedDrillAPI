@@ -12,6 +12,7 @@ def sort(scores): ##takes in a list
 
 
 def makeObjectList(model):
+    print("hello from makeObjectList!")
     # this converts a model object to a list of objects to be used
     objectList = []
     for object in model:
@@ -21,6 +22,7 @@ def makeObjectList(model):
             'time': object.time,
             'id': object.id,  # this id will be used to determine which score matches the user
         })
+    print("hello, objectList", objectList)
 
     return objectList
 
