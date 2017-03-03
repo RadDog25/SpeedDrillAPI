@@ -49,7 +49,7 @@ def postScore(request):
         playerObject = helpers.makeObject(playerModel)
         print("hello playerObject", playerObject)
         # then grab playerId
-        playerId = playerObject[0]['id']
+        playerId = playerObject['id']
         print("hello id!", playerId)
 
         scoreObjects = []
