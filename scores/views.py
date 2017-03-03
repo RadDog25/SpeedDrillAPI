@@ -1,6 +1,7 @@
 from operator import itemgetter
 from django.http import JsonResponse
 from .models import Log, Key
+import json
 
 from .utils import generateHighscores
 
@@ -17,8 +18,15 @@ def getHighscores(request):
 
 def postScore(request):
     (API_KEY, log) = ( request.GET.get('key'), request.GET.get('log') )
+
+    log = json.loads(log) #convert from string to dict
+    cats = []
+    for score in log:
+        cats.append(score["category"])
+
+    
     if Key.objects.filter(key=API_KEY):
-        return JsonResponse({'message': eval(log) })
+        return JsonResponse({'message': str(cats) })
 
 
     return JsonResponse({'message': 'must post a valid key' })
