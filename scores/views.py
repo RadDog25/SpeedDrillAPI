@@ -46,17 +46,24 @@ def postScore(request):
         playerModel = Log.objects.filter(competing=True).order_by('-id')[0]
         print("hello playerModel", playerModel)
         # then conver to an object
-        playerObject = helpers.makeObjectList(playerModel)
+        playerObject = helpers.makeObject(playerModel)
         print("hello playerObject", playerObject)
         # then grab playerId
         playerId = playerObject[0]['id']
-
         print("hello id!", playerId)
 
+        scoreObjects = []
+        for model in Log.objects.filter(competing=True).exclude(name='You'):
+            scoreObjects.append(helpers.makeObject(model))
+
+        print("hello scoreObjects", scoreObjects)
+
+        '''
         # now get all scores where players are competing and name is not 'You'
         scoreModels = Log.objects.filter(competing=True).exclude(name='You')
         # convert to a list of objects
         scoreObjects = helpers.makeObjectList(scoreModels)
+        '''
 
         # now combine add the player object to the score objects and sort
         scoreObjects += playerObject

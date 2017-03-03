@@ -2,7 +2,7 @@ from operator import itemgetter
 from .. import models
 
 
-def sort(scores): ##takes in a list
+def sort(scores):  # takes in a list
     # this algorithm sorts with priority on highest score and next on lowest
     # time
     scores = sorted(scores, key=itemgetter('time'))
@@ -10,7 +10,7 @@ def sort(scores): ##takes in a list
 
     return scores
 
-
+'''
 def makeObjectList(model):
     print("hello from makeObjectList!")
     print("type", type(model))
@@ -30,8 +30,16 @@ def makeObjectList(model):
     print("hello, objectList", objectList)
 
     return objectList
+'''
 
 
+def makeObject(model):
+    return {
+        'name': model.name,
+        'score': model.score,
+        'time': model.time,
+        'id': model.id,  # this id will be used to determine which score matches the user
+    }
 
 
 '''
