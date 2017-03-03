@@ -5,6 +5,22 @@ import json
 
 from .utils import helpers
 
+def postName(request):
+    data = (API_KEY, playerId, name) = (
+        request.GET.get("key"),
+        request.GET.get("playerId"),
+        request.GET.get("name")
+        )
+    #if we get all our data then make name change
+    if Key.objects.filter(key=API_KEY) and None not in data:
+        playerModel = Log.objects.filter(id=playerId)[0]
+        #cant have 'You'
+        if playerModel and name != "You":
+            playerModel.name = name
+            return JsonResponse({'message': 'success!'})
+
+    return JsonResponse({'message': 'failure! could not match playerId!'})
+
 def postScore(request):
     data = (API_KEY, name, score, time, logStr) = (
         request.GET.get('key'),
