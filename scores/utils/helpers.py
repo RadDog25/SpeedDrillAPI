@@ -14,6 +14,8 @@ def sort(scores): ##takes in a list
 def makeObjectList(model):
     print("hello from makeObjectList!")
     # this converts a model object to a list of objects to be used
+    if type(model) is not list:
+        model = [ model ]
     objectList = []
     for object in model:
         objectList.append({
