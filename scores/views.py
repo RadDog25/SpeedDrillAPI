@@ -18,7 +18,7 @@ def getHighscores(request):
 def postScore(request):
     (API_KEY, log) = ( request.GET.get('key'), request.GET.get('log') )
     if Key.objects.filter(key=API_KEY):
-        return JsonResponse({'message': log })
+        return JsonResponse({'message': eval(log) })
 
 
     return JsonResponse({'message': 'must post a valid key' })
