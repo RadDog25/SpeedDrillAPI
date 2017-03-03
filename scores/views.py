@@ -42,6 +42,8 @@ def postScore(request):
         ##then grab playerId
         playerId = playerObject[0]['id']
 
+        print("_____________________playerObj_________________", playerObject)
+
         ##now get all scores where players are competing and name is not 'You'
         scoreModels = Log.Model.objects.filter(competing=True).exclude(name='You')
         #convert to a list of objects
