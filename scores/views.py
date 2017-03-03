@@ -66,7 +66,7 @@ def postScore(request):
         '''
 
         # now combine add the player object to the score objects and sort
-        scoreObjects += playerObject
+        scoreObjects.append(playerObject)
         # finally sort our list
         scoreObjects = helpers.sort(scoreObjects)
 
