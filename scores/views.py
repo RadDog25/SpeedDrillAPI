@@ -40,10 +40,14 @@ def postScore(request):
             log=logStr,
         )
 
+        print("hello post database push")
+
         # next get players model
         playerModel = Log.objects.filter(competing=True).order_by('-id')[0]
+        print("hello playerModel", playerModel)
         # then conver to an object
         playerObject = helpers.makeObjectList(playerModel)
+        print("hello playerObject", playerObject)
         # then grab playerId
         playerId = playerObject[0]['id']
 
