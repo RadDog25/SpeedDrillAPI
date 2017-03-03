@@ -17,6 +17,7 @@ def postName(request):
         #cant have 'You'
         if playerModel and name != "You":
             playerModel.name = name
+            playerModel.save()
             return JsonResponse({'message': 'success!'})
 
     return JsonResponse({'message': 'failure! could not match playerId!'})
