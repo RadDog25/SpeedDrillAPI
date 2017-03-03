@@ -29,7 +29,8 @@ ALLOWED_HOSTS = [
     'https://nameless-savannah-12270.herokuapp.com',
     'nameless-savannah-12270.herokuapp.com',
     'https://raddog25.github.io',
-    'raddog25.github.io'
+    'raddog25.github.io',
+    'http://localhost:3000'
 ]
 
 
@@ -50,14 +51,16 @@ CORS_ORIGIN_WHITELIST = (
     'https://nameless-savannah-12270.herokuapp.com',
     'nameless-savannah-12270.herokuapp.com',
     'https://raddog25.github.io',
-    'raddog25.github.io'
+    'raddog25.github.io',
+    'http://localhost:3000' #take these out after development
 )
 
 CSRF_TRUSTED_ORIGINS = (
     'https://nameless-savannah-12270.herokuapp.com',
     'nameless-savannah-12270.herokuapp.com',
     'https://raddog25.github.io',
-    'raddog25.github.io'
+    'raddog25.github.io',
+    'http://localhost:3000'
 )
 
 MIDDLEWARE = [
