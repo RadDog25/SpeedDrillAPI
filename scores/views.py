@@ -13,11 +13,12 @@ def postName(request):
         )
     #if we get all our data then make name change
     if Key.objects.filter(key=API_KEY) and None not in data:
-        playerModel = Log.objects.filter(id=playerId)[0]
+        playerModel = Log.objects.filter(id=playerId)
         #cant have 'You'
         if playerModel and name != "You":
-            playerModel.name = name
-            playerModel.save()
+            #edit the name, save it, and send back a success object
+            playerModel[0].name = name
+            playerModel[0].save()
             return JsonResponse({'message': 'success!'})
 
     return JsonResponse({'message': 'failure! could not match playerId!'})
