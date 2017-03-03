@@ -11,6 +11,7 @@ def get():
             'name': object.name,
             'score': object.score,
             'time': object.time,
+            'id': object.id, #this id will be used to determine which score matches the user
         })
 
     # this algorithm sorts with priority on highest score and next on lowest
